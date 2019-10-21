@@ -169,10 +169,23 @@
 			htmlStr += '<div class="content redpack-box">';
 				htmlStr += '<div class="red"></div>';
 				htmlStr += '<div class="redpack">(T4ECYJZF0TY)</div>';
-				htmlStr += '<div class="button"><input type="button" value="一键复制" class="btn"  id="itemcopy" data-clipboard-action="copy" data-clipboard-target=".redpack"/></div>';
+				htmlStr += '<div class="button"><a href="javascript:;" id="copy" content="(T4ECYJZF0TY)"></a></div>';
 				htmlStr += '<a href="javascript:;" class="close"></a>';
 			htmlStr += '</div>';
 			RedPack.html(htmlStr);
+			var clipboard = new Clipboard('#copy',{
+				text: function(trigger) {
+					return document.querySelector('#copy').getAttribute('content');
+				}
+			});
+			clipboard.on('success', function(e) {
+				$('.redpack').html('红包口令复制成功，打开手机淘宝领取').addClass('gold');
+				//setTimeout("$('#copy').html('复制邀请口令').removeClass('gold');",2000);
+			});
+			clipboard.on('error', function(e) {
+				$('.redpack').html('红包口令复制失败').addClass('red');
+				//setTimeout("$('#copy').html('复制邀请口令').removeClass('red');",2000);
+			});
 		} 
 		
 		$(function(){
