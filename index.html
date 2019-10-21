@@ -116,7 +116,7 @@
 					htmlStr += '<div class="eleven-head">';
 						htmlStr += '<div class="head"><span><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN019LwaKY2JJhypBKAhU_!!2053469401.png"></span></div>';
 						htmlStr += '<ul class="menu">';
-							htmlStr += '<li><a href="http://p.meishai.net/index.html?id='+userid+'_0_0_100">全部</a></li>';
+							htmlStr += '<li><a href="http://p.meishai.net/index.html?id='+userid+'_0_0_0">全部</a></li>';
 							htmlStr += '<li><a href="http://p.meishai.net/index.html?id='+userid+'_0_0_1">女装</a></li>';
 							htmlStr += '<li><a href="http://p.meishai.net/index.html?id='+userid+'_0_0_2">男装</a></li>';
 							htmlStr += '<li><a href="http://p.meishai.net/index.html?id='+userid+'_0_0_3">内衣</a></li>';
@@ -163,7 +163,7 @@
 		
 		function RedPack(userid){
 			$.ajax({
-				url: 'https://www.meishai.com/app/taoke/taoke_info',
+				url: 'https://www.meishai.com/app/taoke/taoke_info?do=hongbao',
 				type: 'GET',
 				dataType: 'json',
 				data: {
