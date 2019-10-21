@@ -98,7 +98,7 @@
 									htmlStr += '<div class="price"><span>淘宝价:</span><b>&yen;'+Item.goods_price+'</b></div>';
 								}
 								htmlStr += '<div class="coupon"><span>券后价:</span><b>&yen;'+Item.coupon_price+'</b></div>';
-								htmlStr += '<div class="button"><a href="javascript:;" class="BindTaoKePassword" itemid="'+Item.goods_id+'" userid="'+Item.userid+'">立即抢</a></div>';
+								htmlStr += '<div class="button"><a href="javascript:;" class="BindTaoKePassword" goods_id="'+Item.goods_id+'" userid="'+Item.userid+'" itemid="'+Item.itemid+'">立即抢</a></div>';
 							htmlStr += '</li">';
 						}
 					htmlStr += '</ul>';
@@ -111,7 +111,7 @@
 		
 		$(function(){
 			$('#wrap').on('click','.BindTaoKePassword',function(){
-				var itemid = $(this).attr('itemid');
+				var itemid = $(this).attr('goods_id');
 				var userid = $(this).attr('userid');
 				$.ajax({
 					url: 'https://www.meishai.com/app/taoke/taoke_info',
