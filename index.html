@@ -154,19 +154,24 @@
 						}
 					htmlStr += '</ul>';
 					ItemList.html(htmlStr);
-					RedPack();
+					RedPack(userid);
 				}
 	        },
 	        error: function() {
 	        }
 	    });
 		
-		function RedPack(){
+		function RedPack(userid){
 			$.ajax({
-				url: 'https://www.meishai.com/app/taoke/taoke_user_index',
+				url: 'https://www.meishai.com/app/taoke/taoke_info',
 				type: 'GET',
 				dataType: 'json',
-				data: {},
+				data: {
+					userid: userid,
+					itemid: 0,
+					tid : 0,
+					cid : 0
+				},
 				success: function(initData){
 					if(initData.success==1){
 						var Site = initData.results.taoke.site;
