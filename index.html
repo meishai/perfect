@@ -132,11 +132,17 @@
 									htmlStr += '<div class="bd">'+Item.coupon_password+'.</div>';
 								htmlStr += '</div>';
 								htmlStr += '<div class="button"><input type="button" value="一键复制" class="btn"  id="itemcopy" data-clipboard-action="copy" data-clipboard-target=".bd"/></div>';
+								htmlStr += '<a href="javascript:;" class="close"></a>';
 							htmlStr += '</div>';
 							PasswordBox.html(htmlStr);
 						}
 					}
 				});
+			});
+			
+			$('#wrap').on('click','.close',function(){
+				$(".message-box").html('');
+				$(".message-box").hide();
 			});
 		});
 	</script>
