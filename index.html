@@ -40,11 +40,15 @@
 	    var arr = qid.split('_');
 	    userid = arr[0];
 	    itemid = arr[1];
-	    if (userid == null || userid == undefined || userid == "") {
+		tid = arr[1];
+	    ifuserid == null || userid == undefined || userid == "") {
 	        userid = 0;
 	    }
-	    if (itemid == null || itemid == undefined || itemid == "") {
+	    if(itemid == null || itemid == undefined || itemid == "") {
 	        itemid = 0;
+	    }
+		if(tid == null || tid == undefined || tid == "") {
+	        tid = 0;
 	    }
 	    $.ajax({
 	        type: "GET",
@@ -52,10 +56,11 @@
 	        url: "https://www.meishai.com/app/taoke/taoke_info",
 	        data: {
 				userid: userid,
-	            itemid: itemid
+	            itemid: itemid,
+				tid : tid
 	        },
 	        success: function(initData) {
-	            if(initData.success == 1) {
+	            if(initData.success == 1 && itemid>0) {
 					var Item = initData.results.item;
 					var Module = initData.results.module;
 					var ItemBox = $('.wap-box');
