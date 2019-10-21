@@ -174,8 +174,8 @@
 					cid : 0
 				},
 				success: function(initData){
-					if(initData.success==1){
-						var Site = initData.results.site;
+					var Site = initData.results.site;
+					if(initData.success==1 && Site.hongbao){
 						var RedPack = $('.message-box');
 						RedPack.show();
 						var htmlStr = '';
