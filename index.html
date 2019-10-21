@@ -163,10 +163,11 @@
 		
 		function RedPack(userid){
 			$.ajax({
-				url: 'https://www.meishai.com/app/taoke/taoke_info?do=hongbao',
+				url: 'https://www.meishai.com/app/taoke/taoke_info',
 				type: 'GET',
 				dataType: 'json',
 				data: {
+					do : 'hongbao',
 					userid: userid,
 					itemid: 0,
 					tid : 0,
