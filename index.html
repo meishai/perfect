@@ -154,12 +154,26 @@
 						}
 					htmlStr += '</ul>';
 					ItemList.html(htmlStr);
-				
+					RedPack();
 				}
 	        },
 	        error: function() {
 	        }
-	    }); 
+	    });
+		
+		function RedPack(){
+			var RedPack = $('.message-box');
+			RedPack.show();
+			var htmlStr = '';
+			htmlStr += '<div class="bg"></div>';
+			htmlStr += '<div class="content redpack-box">';
+				htmlStr += '<div class="red"></div>';
+				htmlStr += '<div class="redpack">(T4ECYJZF0TY)</div>';
+				htmlStr += '<div class="button"><input type="button" value="一键复制" class="btn"  id="itemcopy" data-clipboard-action="copy" data-clipboard-target=".redpack"/></div>';
+				htmlStr += '<a href="javascript:;" class="close"></a>';
+			htmlStr += '</div>';
+			RedPack.html(htmlStr);
+		} 
 		
 		$(function(){
 			$('#wrap').on('click','.BindTaoKePassword',function(){
