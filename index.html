@@ -103,7 +103,7 @@
 									htmlStr += '<div class="price"><span>淘宝价:</span><b>&yen;'+Item.goods_price+'</b></div>';
 								}
 								htmlStr += '<div class="coupon"><span>券后价:</span><b>&yen;'+Item.coupon_price+'</b></div>';
-								htmlStr += '<div class="button"><a href="javascript:;" class="BindTaoKePassword" goods_id="'+Item.goods_id+'" userid="'+Item.userid+'" itemid="'+Item.itemid+'">立即抢</a></div>';
+								htmlStr += '<div class="button"><a href="javascript:;" class="BindTaoKePassword" goods_id="'+Item.goods_id+'" userid="'+userid+'" itemid="'+Item.itemid+'">立即抢</a></div>';
 							htmlStr += '</li">';
 						}
 					htmlStr += '</ul>';
@@ -116,7 +116,7 @@
 					htmlStr += '<ul class="eleven-list">';
 						for(var i=0,len=List.length;i<len;i++){
 							var Item = List[i];
-							htmlStr += '<li class="list list-id-'+Item.itemid+'">';
+							htmlStr += '<li class="list list-id-'+Item.product_id+'">';
 								htmlStr += '<div class="thumb">';
 									htmlStr += '<img src="'+Item.goods_thumb+'">';
 									htmlStr += '<span></span>';
@@ -129,7 +129,7 @@
 									htmlStr += '<div class="price"><span>淘宝价:</span><b>&yen;'+Item.goods_price+'</b></div>';
 								}
 								htmlStr += '<div class="coupon"><span>券后价:</span><b>&yen;'+Item.coupon_price+'</b></div>';
-								htmlStr += '<div class="button"><a href="javascript:;" class="BindTaoKePassword" goods_id="'+Item.goods_id+'" userid="'+Item.userid+'" itemid="'+Item.itemid+'">立即抢</a></div>';
+								htmlStr += '<div class="button"><a href="javascript:;" class="BindTaoKePassword" goods_id="'+Item.itemid+'" userid="'+Item.userid+'" itemid="'+Item.product_id+'">立即抢</a></div>';
 							htmlStr += '</li">';
 						}
 					htmlStr += '</ul>';
