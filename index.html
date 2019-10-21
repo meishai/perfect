@@ -92,7 +92,7 @@
 									htmlStr += '<div class="price"><span>淘宝价:</span><b>&yen;'+Item.goods_price+'</b></div>';
 								}
 								htmlStr += '<div class="coupon"><span>券后价:</span><b>&yen;'+Item.coupon_price+'</b></div>';
-								htmlStr += '<div class="button"><a href="javascript:;" class="M-pid-add" goods_id="'+Item.goods_id+'">立即抢</a></div>';
+								htmlStr += '<div class="button"><a href="javascript:;" class="BindTaoKePassword" itemid="'+Item.goods_id+'" userid="'+Item.userid+'">立即抢</a></div>';
 							htmlStr += '</li">';
 						}
 					htmlStr += '</ul>';
@@ -102,6 +102,26 @@
 	        error: function() {
 	        }
 	    }); 
+		
+		$(function(){
+			$('#wrap').on('click','.W-choose-price',function(){
+				var itemid = $(this).attr('itemid');
+				var userid = $(this).attr('userid');
+				$.ajax({
+					url: 'https://www.meishai.com/app/taoke/taoke_info',
+					type: 'GET',
+					dataType: 'json',
+					data: {itemid:itemid,userid:userid},
+					success: function(initData){
+						if(initData.success==1){
+							
+						}else{
+							Tips(initData.tips);
+						}
+					}
+				});
+			});
+		});
 	</script>
 	</body>
 </html>
