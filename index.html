@@ -59,6 +59,7 @@
 		if(cid == null || cid == undefined || cid == "") {
 	        cid = 0;
 	    }
+		var sellerid = userid;
 	    $.ajax({
 	        type: "GET",
 	        dataType: 'JSON',
@@ -103,7 +104,7 @@
 									htmlStr += '<div class="price"><span>淘宝价:</span><b>&yen;'+Item.goods_price+'</b></div>';
 								}
 								htmlStr += '<div class="coupon"><span>券后价:</span><b>&yen;'+Item.coupon_price+'</b></div>';
-								htmlStr += '<div class="button"><a href="javascript:;" class="BindTaoKePassword" goods_id="'+Item.goods_id+'" userid="'+userid+'" itemid="'+Item.itemid+'">立即抢</a></div>';
+								htmlStr += '<div class="button"><a href="javascript:;" class="BindTaoKePassword" goods_id="'+Item.goods_id+'" userid="'+sellerid+'" itemid="'+Item.itemid+'">立即抢</a></div>';
 							htmlStr += '</li">';
 						}
 					htmlStr += '</ul>';
