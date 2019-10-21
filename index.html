@@ -120,10 +120,9 @@
 								htmlStr += '<div class="thumb">';
 									htmlStr += '<img src="'+Item.goods_thumb+'">';
 									htmlStr += '<span></span>';
-									htmlStr += '<cite>定金<b>&yen;'+Item.deposit+'</b>抵<b>&yen;'+Item.deposit_deduct+'</b></cite>';
+									htmlStr += '<cite>'+Item.presale_discount_fee_text+'</cite>';
 								htmlStr += '</div>';
 								htmlStr += '<div class="title"><span>'+Item.goods_title+'</span></div>';
-								htmlStr += '<div class="fee_text"><span>'+Item.presale_discount_fee_text+'</span></div>';
 								if(Item.shop_type==1){
 									htmlStr += '<div class="price"><span>天猫价:</span><b>&yen;'+Item.goods_price+'</b></div>';
 								}else{
