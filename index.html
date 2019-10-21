@@ -44,28 +44,30 @@
 	    Request = GetRequest();
 	    var qid = Request['id']; //id
 	    var arr = qid.split('_');
-	    sellerid = arr[0];
-	    itemId = arr[1];
-	    if (sellerid == null || sellerid == undefined || sellerid == "") {
-	        sellerid = 0;
+	    userid = arr[0];
+	    itemid = arr[1];
+	    if (userid == null || userid == undefined || userid == "") {
+	        userid = 0;
 	    }
-	    if (itemId == null || itemId == undefined || itemId == "") {
-	        itemId = 0;
+	    if (itemid == null || itemid == undefined || itemid == "") {
+	        itemid = 0;
 	    }
 	    $.ajax({
 	        type: "GET",
 	        dataType: 'JSON',
-	        url: "https://www.xizhe.com/get/coupon?do=show",
+	        url: "https://www.meishai.com/app/taoke/taoke_info",
 	        data: {
-				sellerid: sellerid,
-	            itemId: itemId
+				userid: sellerid,
+	            itemid: itemid
 	        },
-	        success: function(data) {
-	            if (data.success == 1) {
-					$('.password .bd').html(data.results.item.password);
-	                $('.thumb').html('<img src="'+data.results.item.goods_pic+'_460x460.jpg">');
+	        success: function(initData) {
+	            if(initData.success == 1) {
+					var Item = initData.results.item;
+					var Module = initData.results.module;
+					$('.password .bd').html(Item.coupon_password);
+	                $('.thumb').html('<img src="'+Item.goods_thumb+'_460x460.jpg">');
 					$('.button').html('<input type="button" value="一键复制" class="btn"  id="itemcopy" data-clipboard-action="copy" data-clipboard-target=".bd"/>');
-					$('.home').html('<div class="link"><a href="'+data.results.share.link+'">进入商城</a></div>');
+					$('.home').html('<div class="link"><a href="'+Module.site_url+'">进入商城</a></div>');
 	            } else {
 	            }
 	        },
