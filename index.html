@@ -15,7 +15,8 @@
 			<div class="message-box"></div>
 		</div>
 	<script>
-	    //复制部分
+	    $('.loading').show();
+		//复制部分
 	    var clipboard = new Clipboard('#itemcopy');
 	    clipboard.on('success', function(e) {
 	        $("#itemcopy").val('复制成功，打开购物APP').addClass('gold');
@@ -64,7 +65,8 @@
 				tid : tid
 	        },
 	        success: function(initData) {
-	            if(initData.success == 1 && itemid>0) {
+	            $('.loading').hide();
+				if(initData.success == 1 && itemid>0) {
 					var Item = initData.results.item;
 					var Module = initData.results.module;
 					var ItemBox = $('.wap-box');
