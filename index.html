@@ -9,13 +9,7 @@
 		<script type="text/javascript"  src="https://www.22taoke.com/statics/js/clipboard.min.js"></script>
 	</head>
 	<body id="wrap">
-		<div class="thumb"></div>
-		<div class="password">
-			<div class="hd">长按 &gt; 复制 &gt; 打开购物APP</div>
-			<div class="bd">加载中...</div>
-		</div>
-		<div class="button"></div>
-		<div class="home"></div>
+		<div class="wap-box"></div>
 	<script>
 	    //复制部分
 	    var clipboard = new Clipboard('#itemcopy');
@@ -64,10 +58,18 @@
 	            if(initData.success == 1) {
 					var Item = initData.results.item;
 					var Module = initData.results.module;
-					$('.password .bd').html(Item.coupon_password);
-	                $('.thumb').html('<img src="'+Item.goods_thumb+'_460x460.jpg">');
-					$('.button').html('<input type="button" value="一键复制" class="btn"  id="itemcopy" data-clipboard-action="copy" data-clipboard-target=".bd"/>');
-					$('.home').html('<div class="link"><a href="'+Module.site_url+'">进入商城</a></div>');
+					var ItemBox = $('.wap-box');
+					var htmlStr = '';
+					htmlStr += '<div class="item">';
+						htmlStr += '<div class="thumb"><img src="'+Item.goods_thumb+'_460x460.jpg"></div>';
+						htmlStr += '<div class="password">';
+							htmlStr += '<div class="hd">长按 &gt; 复制 &gt; 打开购物APP</div>';
+							htmlStr += '<div class="bd">'+Item.coupon_password+'.</div>';
+						htmlStr += '</div>';
+						htmlStr += '<div class="button"><input type="button" value="一键复制" class="btn"  id="itemcopy" data-clipboard-action="copy" data-clipboard-target=".bd"/></div>';
+						htmlStr += '<div class="home"><div class="link"><a href="'+Module.site_url+'">进入商城</a></div></div>';
+					htmlStr += '</div>';
+					ItemBox.html(htmlStr);
 	            } else {
 	            }
 	        },
