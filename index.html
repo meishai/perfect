@@ -111,13 +111,15 @@
 		
 		$(function(){
 			$('#wrap').on('click','.BindTaoKePassword',function(){
-				var itemid = $(this).attr('goods_id');
+				var goods_id = $(this).attr('goods_id');
 				var userid = $(this).attr('userid');
+				var itemid = $(this).attr('itemid');
+				$('.list-id-'+itemid+' .button').html('<cite class="load"></cite>');
 				$.ajax({
 					url: 'https://www.meishai.com/app/taoke/taoke_info',
 					type: 'GET',
 					dataType: 'json',
-					data: {itemid:itemid,userid:userid},
+					data: {itemid:goods_id,userid:userid},
 					success: function(initData){
 						if(initData.success==1){
 							var PasswordBox = $('.message-box');
@@ -136,6 +138,7 @@
 							htmlStr += '</div>';
 							PasswordBox.html(htmlStr);
 						}
+						$('.list-id-'+itemid+' .button').html('<a href="javascript:;" class="BindTaoKePassword" goods_id="'+goods_id+'" userid="'+userid+'" itemid="'+itemid+'">立即抢</a>');
 					}
 				});
 			});
