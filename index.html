@@ -82,15 +82,17 @@
 					htmlStr += '<ul class="item-list">';
 						for(var i=0,len=List.length;i<len;i++){
 							var Item = List[i];
-							htmlStr += '<div class="thumb"><img src="'+Item.goods_thumb+'_460x460.jpg"></div>';
-							htmlStr += '<div class="title"><span>'+Item.goods_title+'</span></div>';
-							if(Item.shop_type==1){
-								htmlStr += '<div class="price"><span>天猫价:</span><b>'+Item.goods_price+'</b></div>';
-							}else{
-								htmlStr += '<div class="price"><span>淘宝价:</span><b>'+Item.goods_price+'</b></div>';
-							}
-							htmlStr += '<div class="coupon"><span>券后价:</span><b>'+Item.coupon_price+'</b></div>';
-							htmlStr += '<div class="button"><a href="javascript:;" class="M-pid-add" goods_id="'+Item.goods_id+'">立即抢</a></div>';
+							htmlStr += '<li class="list">';
+								htmlStr += '<div class="thumb"><img src="'+Item.goods_thumb+'_460x460.jpg"></div>';
+								htmlStr += '<div class="title"><span>'+Item.goods_title+'</span></div>';
+								if(Item.shop_type==1){
+									htmlStr += '<div class="price"><span>天猫价:</span><b>'+Item.goods_price+'</b></div>';
+								}else{
+									htmlStr += '<div class="price"><span>淘宝价:</span><b>'+Item.goods_price+'</b></div>';
+								}
+								htmlStr += '<div class="coupon"><span>券后价:</span><b>'+Item.coupon_price+'</b></div>';
+								htmlStr += '<div class="button"><a href="javascript:;" class="M-pid-add" goods_id="'+Item.goods_id+'">立即抢</a></div>';
+							htmlStr += '</li">';
 						}
 					htmlStr += '</ul>';
 					ItemList.html(htmlStr);
