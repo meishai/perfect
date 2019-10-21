@@ -109,6 +109,28 @@
 					htmlStr += '</ul>';
 					ItemList.html(htmlStr);
 				}else if(initData.success == 1) {
+					var List = initData.results.list;
+					var ItemList = $('.wap-box');
+					var htmlStr = '';
+					htmlStr += '<div class="item-head"><span><img src="https://www.meishai.com/statics/css/image/ranktitle.svg"></span></div>';
+					htmlStr += '<ul class="eleven-list">';
+						for(var i=0,len=List.length;i<len;i++){
+							var Item = List[i];
+							htmlStr += '<li class="list list-id-'+Item.itemid+'">';
+								htmlStr += '<div class="thumb"><img src="'+Item.goods_thumb+'_460x460.jpg"></div>';
+								htmlStr += '<div class="title"><span>'+Item.goods_title+'</span></div>';
+								if(Item.shop_type==1){
+									htmlStr += '<div class="price"><span>天猫价:</span><b>&yen;'+Item.goods_price+'</b></div>';
+								}else{
+									htmlStr += '<div class="price"><span>淘宝价:</span><b>&yen;'+Item.goods_price+'</b></div>';
+								}
+								htmlStr += '<div class="coupon"><span>券后价:</span><b>&yen;'+Item.coupon_price+'</b></div>';
+								htmlStr += '<div class="button"><a href="javascript:;" class="BindTaoKePassword" goods_id="'+Item.goods_id+'" userid="'+Item.userid+'" itemid="'+Item.itemid+'">立即抢</a></div>';
+							htmlStr += '</li">';
+						}
+					htmlStr += '</ul>';
+					ItemList.html(htmlStr);
+				
 				}
 	        },
 	        error: function() {
