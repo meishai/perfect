@@ -115,7 +115,7 @@
 					data: {itemid:itemid,userid:userid},
 					success: function(initData){
 						if(initData.success==1){
-							var PasswordBox = $('.manage-box');
+							var PasswordBox = $('.message-box');
 							PasswordBox.show();
 							var Item = initData.results.item;
 							var htmlStr = '';
