@@ -77,7 +77,7 @@
 					var ItemBox = $('.wap-box');
 					var htmlStr = '';
 					htmlStr += '<div class="item-box">';
-						htmlStr += '<div class="thumb"><img src="'+Item.goods_thumb+'_460x460.jpg"></div>';
+						htmlStr += '<div class="thumb"><img src="'+Item.goods_thumb+'"></div>';
 						htmlStr += '<div class="password">';
 							htmlStr += '<div class="hd">长按 &gt; 复制 &gt; 打开购物APP</div>';
 							htmlStr += '<div class="bd">'+Item.coupon_password+'.</div>';
@@ -95,7 +95,7 @@
 						for(var i=0,len=List.length;i<len;i++){
 							var Item = List[i];
 							htmlStr += '<li class="list list-id-'+Item.itemid+'">';
-								htmlStr += '<div class="thumb"><img src="'+Item.goods_thumb+'_460x460.jpg"></div>';
+								htmlStr += '<div class="thumb"><img src="'+Item.goods_thumb+'"></div>';
 								htmlStr += '<div class="title"><span>'+Item.goods_title+'</span></div>';
 								if(Item.shop_type==1){
 									htmlStr += '<div class="price"><span>天猫价:</span><b>&yen;'+Item.goods_price+'</b></div>';
@@ -224,7 +224,7 @@
 							var htmlStr = '';
 							htmlStr += '<div class="bg"></div>';
 							htmlStr += '<div class="content password-box">';
-								htmlStr += '<div class="thumb"><img src="'+Item.goods_thumb+'_460x460.jpg"></div>';
+								htmlStr += '<div class="thumb"><img src="'+Item.goods_thumb+'"></div>';
 								htmlStr += '<div class="password">';
 									htmlStr += '<div class="hd">长按 &gt; 复制 &gt; 打开购物APP</div>';
 									htmlStr += '<div class="bd">'+Item.coupon_password+'.</div>';
