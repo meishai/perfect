@@ -4,9 +4,9 @@
 		<title>精品推荐</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
-		<link href="https://www.22taoke.com/statics/css/item.css" rel="stylesheet" type="text/css">
-		<script src="https://www.22taoke.com/statics/js/jquery.min.2.2.4.js"></script>
-		<script type="text/javascript"  src="https://www.22taoke.com/statics/js/clipboard.min.js"></script>
+		<link href="https://img.meishai.net/statics/css/item.css" rel="stylesheet" type="text/css">
+		<script src="https://img.meishai.net/statics/js/jquery.min.2.2.4.js"></script>
+		<script src="https://img.meishai.net/statics/js/clipboard.min.js"></script>
 	</head>
 	<body id="wrap">
 		<div class="ui-main">
@@ -90,7 +90,7 @@
 					var List = initData.results.list;
 					var ItemList = $('.wap-box');
 					var htmlStr = '';
-					htmlStr += '<div class="item-head"><span><img src="https://www.meishai.com/statics/css/image/ranktitle.svg"></span></div>';
+					htmlStr += '<div class="item-head"><span><img src="https://img.meishai.net/statics/css/image/ranktitle.svg"></span></div>';
 					htmlStr += '<ul class="item-list">';
 						for(var i=0,len=List.length;i<len;i++){
 							var Item = List[i];
@@ -114,7 +114,7 @@
 					var ItemList = $('.wap-box');
 					var htmlStr = '';
 					htmlStr += '<div class="eleven-head">';
-						htmlStr += '<div class="head"><span><img src="https://img.alicdn.com/imgextra/i3/2053469401/O1CN019LwaKY2JJhypBKAhU_!!2053469401.png"></span></div>';
+						htmlStr += '<div class="head"><span><img src="https://img.meishai.net/statics/css/image/fengqiang.png"></span></div>';
 						htmlStr += '<ul class="menu">';
 							htmlStr += '<li><a href="http://p.meishai.net/index.html?id='+userid+'_0_0_0">全部</a></li>';
 							htmlStr += '<li><a href="http://p.meishai.net/index.html?id='+userid+'_0_0_1">女装</a></li>';
@@ -194,11 +194,9 @@
 						});
 						clipboard.on('success', function(e) {
 							$('.redpack').html('红包口令复制成功，打开手机淘宝领取').addClass('gold');
-							//setTimeout("$('#copy').html('复制邀请口令').removeClass('gold');",2000);
 						});
 						clipboard.on('error', function(e) {
 							$('.redpack').html('红包口令复制失败').addClass('red');
-							//setTimeout("$('#copy').html('复制邀请口令').removeClass('red');",2000);
 						});
 					}
 				}
